@@ -1,6 +1,0 @@
-services:
-  - type: web
-    name: mang-xa-hoi-lop5
-    runtime: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app
