@@ -44,8 +44,9 @@ def dang_bai():
     
     return redirect('/')
 
+init_db() # Đưa ra ngoài để lúc nào Render bật app cũng phải chạy hàm này đầu tiên
+
 if __name__ == '__main__':
-    init_db()
     app.run(port=8080)
 
 
