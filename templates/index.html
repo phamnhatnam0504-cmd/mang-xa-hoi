@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Mạng Xã Hội Lớp 5</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 0 auto; padding: 20px; background: #f0f2f5; }
+        .form-box { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        input, textarea { width: 93%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px; }
+        button { background: #1877f2; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; width: 100%; font-weight: bold; }
+        .post { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 15px; }
+        .author { font-weight: bold; color: #1877f2; }
+        .time { font-size: 11px; color: gray; margin-top: 5px; }
+    </style>
+</head>
+<body>
+
+    <h2>Chợ Tin Nhắn 🚀</h2>
+
+    <!-- Ô đăng bài -->
+    <div class="form-box">
+        <form action="/dang-bai" method="POST">
+            <input type="text" name="user" placeholder="Tên của em là gì?" required>
+            <textarea name="content" placeholder="Hôm nay em đang nghĩ gì?" rows="3" required></textarea>
+            <button type="submit">Đăng bài lên Threads</button>
+        </form>
+    </div>
+
+    <!-- Nơi hiển thị các bài viết -->
+    <h3>Bài đăng mới nhất</h3>
+    {% for post in posts %}
+    <div class="post">
+        <p class="author">👤 {{ post[1] }}</p>
+        <p>{{ post[2] }}</p>
+        <p class="time">🕒 {{ post[3] }}</p>
+    </div>
+    {% endfor %}
+
+</body>
+</html>
+
